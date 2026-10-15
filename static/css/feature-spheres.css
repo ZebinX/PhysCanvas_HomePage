@@ -1,0 +1,35 @@
+.pc-feature-section { background: #f8fafb; }
+.pc-feature-section .pc-feature-container { max-width: 1240px !important; width: 100%; margin-inline: auto; }
+.pc-feature-intro { color: #677382; font-size: 18px; margin: 0 auto 28px; }
+.pc-feature-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px 24px; margin: 0 0 30px; }
+.pc-feature-legend, .pc-feature-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; }
+.pc-feature-legend label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; color: #354052; }
+.pc-feature-legend input { appearance: none; width: 13px; height: 13px; border: 1px solid var(--modality-color); border-radius: 3px; margin: 0; cursor: pointer; }
+.pc-feature-legend input:checked { background: var(--modality-color); }
+.pc-feature-legend label:has(input:not(:checked)) { opacity: .45; }
+.pc-feature-legend input:focus-visible { outline: 2px solid #2f6fed; outline-offset: 3px; }
+.pc-feature-controls { gap: 8px; }
+.pc-feature-modes { display: inline-flex; background: #eaf0f3; padding: 3px; border-radius: 6px; }
+.pc-feature-modes button { border: 0; background: transparent; color: #647184; padding: 5px 10px; font: inherit; font-size: 12px; border-radius: 4px; cursor: pointer; min-height: 30px; }
+.pc-feature-modes button[aria-pressed="true"] { background: #fff; color: #263a51; box-shadow: 0 1px 3px #15283f16; }
+.pc-feature-icon { width: 36px; height: 36px; border: 1px solid #dce3e9; border-radius: 5px; background: transparent; color: #607082; cursor: pointer; padding: 0; }
+.pc-feature-icon[aria-pressed="true"] { color: #315f93; border-color: #b7cbe0; background: #eaf0f7; }
+.pc-feature-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 20px; }
+.pc-feature-view { margin: 0; min-width: 0; }
+.pc-feature-view h3 { font: 600 19px/1.4 'Times New Roman', Times, serif; text-align: center; color: #253143; min-height: 54px; margin: 0; }
+.pc-feature-viewport { position: relative; width: 100%; aspect-ratio: 1; }
+.pc-feature-viewport canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: pan-y; user-select: none; border-radius: 0; }
+.pc-feature-viewport canvas:active { cursor: grabbing; }
+.pc-feature-viewport canvas:focus-visible { outline: 2px solid #91aac7; outline-offset: 3px; }
+.pc-feature-caption { color: #728091; font-size: 18px; line-height: 1.6; text-align: center; max-width: 880px; margin: 26px auto 0; }
+.pc-feature-status { color: #795045; text-align: center; font-size: 14px; margin-top: 18px; }
+.pc-feature-section [hidden] { display: none !important; }
+/* The centered plots need the rail's space at compact desktop widths. */
+@media (min-width: 1408px) and (max-width: 1879px) {
+  body:has(#ft-toc a[href="#feature-spheres"][aria-current="location"]) #ft-toc {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+@media (max-width: 1023px) { .pc-feature-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 30px 20px; } .pc-feature-toolbar { justify-content: center; } }
+@media (max-width: 580px) { .pc-feature-grid { grid-template-columns: minmax(0,1fr); gap: 26px; } .pc-feature-view { max-width: 360px; width: 100%; justify-self: center; } .pc-feature-view h3 { min-height: 38px; } .pc-feature-legend { justify-content: center; gap: 12px; } .pc-feature-intro, .pc-feature-caption { font-size: 16px; } .pc-feature-controls { justify-content: center; } }

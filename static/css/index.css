@@ -1,0 +1,1202 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+
+/* Reserve space for the lazily-loaded Related Works video previews so the
+   narrow side column does not collapse-then-jump (CLS) before metadata loads.
+   object-fit:contain keeps every clip's true aspect ratio (no crop/stretch);
+   the videos already sit on a black background, so any letterboxing is invisible. */
+#related-works article.columns video {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: contain;
+}
+
+.overlay {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.7); /* 70% opacity black */
+z-index: 1; /* Make sure it's behind the text */
+transition: opacity 1.0s;
+}
+  
+.hero-body,
+.hero-head,
+.hero-foot {
+  z-index: 2; /* Ensure text is above the overlay */
+  transition: opacity 1.0s;
+}
+
+/* =========================
+   FlexiTac visual upgrade
+   keep existing hero basics
+   ========================= */
+
+:root {
+  --ft-bg: #f7f9fc;
+  --ft-surface: #ffffff;
+  --ft-surface-soft: #fbfcfe;
+  --ft-text: #122033;
+  --ft-muted: #617086;
+  --ft-line: rgba(18, 32, 51, 0.08);
+  --ft-blue: #2f6fed;
+  --ft-blue-dark: #1c4fb7;
+  --ft-shadow: 0 10px 30px rgba(18, 32, 51, 0.08);
+  --ft-shadow-soft: 0 6px 18px rgba(18, 32, 51, 0.06);
+  --ft-radius: 18px;
+  --ft-radius-lg: 24px;
+  --ft-maxw: 1080px;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor jumps so section headings clear the fixed top nav bar */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--ft-bg);
+  color: var(--ft-text);
+}
+
+.section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.section.is-small {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.container {
+  position: relative;
+}
+
+.title,
+.subtitle,
+h1, h2, h3, h4 {
+  color: var(--ft-text);
+}
+
+p,
+.content,
+.content p,
+.content li {
+  color: var(--ft-text);
+  line-height: 1.7;
+}
+
+/* Keep your current front-page hero, only polish it */
+.hero.video {
+  background: #0b1220;
+}
+
+.hero.video .overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.72) 50%,
+      rgba(0, 0, 0, 0.82) 100%
+    );
+}
+
+.hero.video .navbar {
+  background: transparent;
+}
+
+.hero.video .navbar-item,
+.hero.video .navbar-item a {
+  color: #fff;
+}
+
+.hero.video .publication-title,
+.hero.video .subtitle,
+.hero.video .is-3,
+.hero.video .is-2 {
+  color: #fff !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* Front page title polish, while keeping your current setup */
+.hero.video .publication-title.is-size-1-mobile {
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.hero.video .subtitle.publication-title {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.15;
+}
+
+.hero.video .hero-body .container {
+  max-width: 1100px;
+}
+
+/* Better button look */
+.button.is-rounded {
+  border-radius: 999px;
+}
+
+.button.is-dark,
+.button.is-light,
+.button.is-primary {
+  box-shadow: var(--ft-shadow-soft);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.button.is-dark:hover,
+.button.is-light:hover,
+.button.is-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--ft-shadow);
+}
+
+/* Hero footer tabs */
+.hero-foot .tabs ul {
+  border-bottom: none;
+}
+
+.hero-foot .tabs a {
+  border-radius: 12px 12px 0 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0.3rem;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.hero-foot .tabs a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+/* Section headings */
+.section .title.is-1,
+.section .title.is-2,
+.section .title.is-3 {
+  letter-spacing: -0.025em;
+}
+
+.section .title.has-text-centered {
+  margin-bottom: 1rem;
+}
+
+/* Clean centered content width. The `body` + `:not()` prefix lifts this above
+   Bulma's widescreen rule (.container:not(.is-max-desktop):not(.is-max-widescreen),
+   which otherwise widens sections to 1344px at >=1408px). Keeping every section
+   within --ft-maxw makes the layout uniform and leaves a stable left gutter for
+   the fixed TOC rail. */
+body section:not(.hero) > .container:not(.is-max-widescreen),
+body .section .container:not(.is-max-widescreen),
+body footer .container:not(.is-max-widescreen) {
+  max-width: var(--ft-maxw);
+}
+
+/* General card / box polish */
+.box,
+.box.alt {
+  border-radius: var(--ft-radius);
+  border: 1px solid var(--ft-line);
+  box-shadow: var(--ft-shadow-soft);
+  background: var(--ft-surface);
+}
+
+.box.alt:hover,
+.box:hover {
+  box-shadow: var(--ft-shadow);
+}
+
+/* Images and videos */
+img,
+video {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+}
+
+video {
+  background: #000;
+}
+
+/* Unified media frame look */
+video[controls],
+video[autoplay],
+img[alt] {
+  border-radius: 14px;
+}
+
+.column .content video,
+.column .content img,
+.columns .content video,
+.columns .content img {
+  border-radius: 14px;
+  border: 1px solid var(--ft-line);
+  box-shadow: var(--ft-shadow-soft);
+}
+
+/* Add breathing room between major stacked blocks */
+#hardware .container,
+#simulation .container,
+#datacollection .container {
+  margin-bottom: 1.75rem;
+}
+
+/* Intro paragraph section */
+#overview .columns.is-centered {
+  align-items: stretch;
+}
+
+#overview .column.is-four-fifths {
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(255,255,255,0.65);
+  box-shadow: var(--ft-shadow);
+  border-radius: var(--ft-radius-lg);
+  padding: 2rem 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Hardware section */
+#hardware .title.is-5,
+#simulation .title.is-5,
+#datacollection .title.is-5 {
+  margin-bottom: 0.85rem;
+}
+
+#hardware .link-block .button,
+#simulation .link-block .button {
+  margin-top: 0.4rem;
+}
+
+/* Resource boxes */
+#hardware .box.alt,
+#moreVideosTactile .box.alt {
+  height: 100%;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+#hardware .box.alt:hover,
+#moreVideosTactile .box.alt:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ft-shadow);
+}
+
+/* System design carousel */
+.video-carousel {
+  border-radius: var(--ft-radius-lg);
+  background: var(--ft-surface);
+  border: 1px solid var(--ft-line);
+  box-shadow: var(--ft-shadow);
+  padding-top: 1.4rem !important;
+  padding-bottom: 1.4rem !important;
+}
+
+.carousel-nav.prev,
+.carousel-nav.next {
+  background: rgba(18, 32, 51, 0.08) !important;
+  color: var(--ft-text);
+  font-size: 1.1rem;
+  transition: background 0.18s ease;
+}
+
+.carousel-nav.prev:hover,
+.carousel-nav.next:hover {
+  background: rgba(47, 111, 237, 0.16) !important;
+}
+
+/* Related works */
+article.columns {
+  background: var(--ft-surface);
+  border: 1px solid var(--ft-line);
+  box-shadow: var(--ft-shadow-soft);
+  border-radius: var(--ft-radius);
+  padding: 0.35rem;
+  margin-bottom: 0 !important;
+}
+
+#related-works > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+article.columns .content p {
+  margin-bottom: 0;
+}
+
+article.columns img,
+article.columns video {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Footer */
+.footer {
+  background: transparent;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer .content p {
+  color: var(--ft-muted);
+}
+
+/* Visitor map (centered card in the Community section) */
+#visitor-map-wrapper {
+  background: #fff;
+  box-shadow: var(--ft-shadow-soft);
+  border: 1px solid var(--ft-line) !important;
+  border-radius: 16px !important;
+}
+
+/* Standalone Awesome-list preview card (own section at page bottom) */
+.awesome-preview {
+  width: min(880px, 100%);
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Gallery preview card */
+#gallery-preview-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--ft-line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--ft-shadow-soft);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+#gallery-preview-card:hover {
+  box-shadow: var(--ft-shadow);
+}
+
+.gallery-preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(18, 32, 51, 0.06);
+  background: linear-gradient(180deg, #fbfcfe 0%, #f4f7fb 100%);
+  font-weight: 600;
+  color: #122033;
+}
+
+.gallery-preview-head:hover {
+  opacity: 1;
+  color: var(--ft-blue);
+}
+
+.gallery-preview-cta {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ft-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* The live, scroll-on-hover gallery window */
+.gallery-preview-frame {
+  position: relative;
+  flex: 1 1 auto;
+  height: 420px;
+  background: var(--ft-bg);
+}
+
+.gallery-preview-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.gallery-preview-foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid rgba(18, 32, 51, 0.06);
+  background: #fff;
+  color: var(--ft-blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.gallery-preview-foot:hover {
+  opacity: 1;
+  background: var(--ft-surface-soft);
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-preview-frame { height: 340px; }
+}
+
+.visitor-total-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(47, 111, 237, 0.12);
+  border-radius: 12px;
+  background: #f7faff;
+  color: #122033;
+  text-align: left;
+}
+
+.visitor-total-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 2.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: rgba(47, 111, 237, 0.12);
+  color: #2f6fed;
+}
+
+.visitor-total-label {
+  display: block;
+  color: var(--ft-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+#visitor-total-count {
+  display: block;
+  margin-top: 0.15rem;
+  color: #122033;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+#visitor-total-period {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--ft-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+#visitor-total-period:empty {
+  display: none;
+}
+
+/* Link styling */
+a {
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+
+a:hover {
+  opacity: 0.92;
+}
+
+/* Better muted text */
+h2[style*="color: #9e9e9e;"],
+h2[style*="color: rgb(189, 189, 189);"] {
+  color: var(--ft-muted) !important;
+}
+
+/* =========================
+   Top Nav Bar (gallery style)
+   ========================= */
+.ft-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, backdrop-filter 0.25s ease;
+}
+
+/* Solid surface once the user scrolls past the hero top */
+.ft-navbar.is-scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(150%) blur(10px);
+  -webkit-backdrop-filter: saturate(150%) blur(10px);
+  border-bottom-color: var(--ft-line);
+  box-shadow: 0 1px 0 rgba(18, 32, 51, 0.02), 0 6px 18px rgba(18, 32, 51, 0.05);
+}
+
+.ft-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 769px) {
+  .ft-navbar-inner { padding: 0 48px; }
+}
+
+.ft-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  min-width: 0;
+}
+
+.ft-brand {
+  font-family: 'Google Sans', 'Inter', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.ft-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ft-nav-links a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.ft-nav-links a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  opacity: 1;
+}
+
+.ft-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ft-btn-ghost,
+.ft-btn-solid,
+.ft-btn-dark {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+}
+
+.ft-btn-ghost {
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.ft-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #fff;
+  opacity: 1;
+}
+
+.ft-btn-solid {
+  background: var(--ft-blue);
+  color: #fff;
+  border: 1px solid var(--ft-blue);
+}
+
+.ft-btn-solid:hover {
+  background: var(--ft-blue-dark);
+  border-color: var(--ft-blue-dark);
+  transform: translateY(-1px);
+  color: #fff;
+  opacity: 1;
+}
+
+/* Deep-space "Join Discord" button — matches the gallery.html navbar CTA */
+.ft-btn-dark {
+  background: var(--ft-text); /* deep space #122033 */
+  color: #fff;
+  border: 1px solid var(--ft-text);
+}
+
+.ft-btn-dark:hover {
+  background: #0e1c2f;
+  border-color: #0e1c2f;
+  transform: translateY(-1px);
+  color: #fff;
+  opacity: 1;
+}
+
+/* Scrolled state: switch text/brand to dark on the light bar */
+.ft-navbar.is-scrolled .ft-brand {
+  color: var(--ft-text);
+  text-shadow: none;
+}
+
+.ft-navbar.is-scrolled .ft-nav-links a {
+  color: var(--ft-muted);
+  text-shadow: none;
+}
+
+.ft-navbar.is-scrolled .ft-nav-links a:hover {
+  color: var(--ft-blue);
+  background: var(--ft-surface-soft);
+}
+
+.ft-navbar.is-scrolled .ft-btn-ghost {
+  color: var(--ft-muted);
+  border-color: var(--ft-line);
+}
+
+.ft-navbar.is-scrolled .ft-btn-ghost:hover {
+  color: var(--ft-blue);
+  border-color: var(--ft-blue);
+  background: var(--ft-surface-soft);
+}
+
+.ft-navbar-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.16);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.ft-navbar.is-scrolled .ft-navbar-toggle {
+  background: var(--ft-surface-soft);
+  color: var(--ft-text);
+}
+
+.ft-nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.5rem 16px 1rem;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ft-line);
+}
+
+.ft-nav-mobile.is-open {
+  display: flex;
+}
+
+.ft-nav-mobile a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ft-muted);
+  padding: 0.7rem 0.5rem;
+  border-radius: 8px;
+}
+
+.ft-nav-mobile a:hover {
+  color: var(--ft-blue);
+  background: var(--ft-surface-soft);
+  opacity: 1;
+}
+
+@media screen and (max-width: 1023px) {
+  .ft-nav-links,
+  .ft-navbar-actions { display: none; }
+  .ft-navbar-toggle { display: inline-flex; align-items: center; justify-content: center; }
+}
+
+/* =========================
+   Footer (deep-space, gallery style)
+   ========================= */
+.ft-footer {
+  background: var(--ft-text); /* deep space #122033 */
+  color: #eaf1ff;
+  margin-top: 2rem;
+}
+
+.ft-footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 48px 2.5rem;
+}
+
+.ft-footer-brand {
+  font-family: 'Google Sans', 'Inter', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.ft-footer-tag {
+  color: #b9c7e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+}
+
+.ft-footer-fine {
+  color: rgba(185, 199, 224, 0.6);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.ft-footer-col h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #b9c7e0;
+  margin: 0 0 1rem;
+}
+
+.ft-footer-col a {
+  display: block;
+  color: #b9c7e0;
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+  transition: color 0.2s ease;
+}
+
+.ft-footer-col a:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+.ft-footer-legal {
+  border-top: 1px solid rgba(185, 199, 224, 0.15);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem 48px 2rem;
+}
+
+.ft-footer-legal p {
+  color: rgba(185, 199, 224, 0.65);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ft-footer-legal a {
+  color: #b1c5ff;
+}
+
+.ft-footer-legal a:hover {
+  color: #fff;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .ft-footer-grid {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 24px 1.5rem;
+    gap: 2rem;
+  }
+  .ft-footer-legal { padding: 1.25rem 24px 2rem; }
+}
+
+/* =========================
+   Sticky Table of Contents (left sidebar)
+   Mirrors tac-corl.github.io's "On This Page" rail,
+   retinted to FlexiTac's blue / deep-space palette.
+   ========================= */
+#ft-toc {
+  position: fixed;
+  left: 28px;
+  top: 50%;
+  width: 268px;
+  z-index: 20; /* sits below the fixed top nav bar (z-index 30) */
+  background: transparent;
+  transform: translateX(-130%) translateY(-50%);
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+#ft-toc.is-visible {
+  transform: translateX(0) translateY(-50%);
+  pointer-events: auto;
+}
+
+/* Vertical hairline that the dots sit on */
+#ft-toc::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(18, 32, 51, 0.12) 12%,
+    rgba(18, 32, 51, 0.12) 88%,
+    transparent 100%
+  );
+}
+
+.ft-toc-inner {
+  display: flex;
+  flex-direction: column;
+  /* Shrink each link to its text width so the (otherwise full-width)
+     invisible link box does not capture clicks meant for content cards
+     that sit near the rail at mid-width viewports. */
+  align-items: flex-start;
+}
+
+.ft-toc-title {
+  font-family: 'Google Sans', 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ft-muted);
+  opacity: 0.82;
+  padding: 0 0 6px 24px;
+  margin: 0;
+}
+
+.ft-toc-link {
+  position: relative;
+  display: block;
+  padding: 7px 10px 7px 24px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ft-muted);
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: color 0.22s ease, padding-left 0.22s ease;
+}
+
+.ft-toc-subgroup {
+  display: flex;
+  flex-direction: column;
+  margin: -1px 0 6px 22px;
+}
+
+.ft-toc-link-sub {
+  padding-top: 6px;
+  padding-bottom: 5px;
+  padding-left: 18px;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #97a3b5;
+}
+
+/* Hollow dot marker on the rail */
+.ft-toc-link::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ft-surface);
+  border: 1.5px solid rgba(47, 111, 237, 0.32);
+  transform: translateY(-50%);
+  transition: background 0.22s ease, border-color 0.22s ease, width 0.22s ease, height 0.22s ease, left 0.22s ease, box-shadow 0.22s ease;
+}
+
+.ft-toc-link:hover {
+  color: var(--ft-text);
+  opacity: 1;
+}
+
+.ft-toc-link:hover::before {
+  border-color: var(--ft-blue);
+  width: 11px;
+  height: 11px;
+  left: 0;
+}
+
+/* Smaller solid dot for subsection links */
+.ft-toc-link-sub::before {
+  left: 2px;
+  width: 5px;
+  height: 5px;
+  background: #b3bdca;
+  border: 0;
+}
+
+.ft-toc-link-sub:hover::before {
+  left: 1px;
+  width: 7px;
+  height: 7px;
+  background: var(--ft-blue);
+  border: 0;
+}
+
+/* Active section */
+.ft-toc-link.is-active {
+  color: var(--ft-text);
+  font-weight: 700;
+}
+
+.ft-toc-link.is-active-parent {
+  color: #2b3545;
+}
+
+.ft-toc-link.is-active::before {
+  background: var(--ft-blue);
+  border-color: var(--ft-blue);
+  width: 11px;
+  height: 11px;
+  left: 0;
+  box-shadow: 0 0 0 4px rgba(47, 111, 237, 0.14);
+}
+
+.ft-toc-link-sub.is-active {
+  color: var(--ft-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--ft-blue);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+.ft-toc-link-sub.is-active::before {
+  background: var(--ft-blue);
+  width: 7px;
+  height: 7px;
+  left: 1px;
+  box-shadow: none;
+}
+
+/* The centred content column is capped at 1080px (--ft-maxw). Below ~1408px
+   the side gutter is no longer wide enough to hold the rail without touching
+   content, so hide it there. (Sections also drop to a 1080px container at this
+   width, but the viewport gutter is what runs out.) */
+@media screen and (max-width: 1407px) {
+  #ft-toc {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #ft-toc {
+    transition: none;
+  }
+}
+
+/* Mobile tuning */
+@media screen and (max-width: 768px) {
+  .section {
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+  }
+
+  #overview .column.is-four-fifths {
+    padding: 1.35rem 1.2rem;
+    border-radius: 18px;
+  }
+
+  article.columns {
+    padding: 1rem;
+  }
+
+  .video-carousel {
+    padding-left: 2.8rem !important;
+    padding-right: 2.8rem !important;
+  }
+
+  .hero.video .publication-title.is-size-1-mobile {
+    line-height: 0.95;
+  }
+
+  .hero.video .subtitle.publication-title {
+    line-height: 1.2;
+  }
+}

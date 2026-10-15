@@ -1,0 +1,109 @@
+/* Match Overview across the page; keep semantic and dark-surface colors. */
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../webfonts/noto-sans/noto-sans-400.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../webfonts/noto-sans/noto-sans-500.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../webfonts/noto-sans/noto-sans-600.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../webfonts/noto-sans/noto-sans-700.ttf') format('truetype');
+}
+
+:root { --pc-font-family: 'Noto Sans', sans-serif; }
+
+body,
+button, input, optgroup, select, textarea,
+.publication-title, .publication-authors, .teaser,
+.ft-brand, .ft-footer-brand, .ft-toc-title, .ft-toc-link,
+.pc-feature-view h3 {
+  font-family: var(--pc-font-family);
+}
+
+#contact-explorer {
+  --pc-ink: var(--ft-text);
+  --pc-muted: var(--ft-text);
+}
+
+/* Ordinary copy and captions share Overview's ink, without changing sizes. */
+#summary-video p,
+.pc-contact-heading > p,
+.pc-response-heading,
+.pc-recording-title strong,
+.pc-small-note,
+.pc-task-note,
+.pc-pads figcaption,
+.pc-provenance,
+.pc-framework figcaption,
+.pc-framework figcaption strong,
+.pc-policy-results figcaption,
+.pc-feature-intro,
+.pc-feature-caption,
+.pc-feature-legend label,
+.pc-feature-view h3,
+.pc-comparison-heading p,
+.pc-comparison-meta,
+.pc-comparison-example-header,
+.pc-comparison-example-header strong,
+.pc-comparison-layer-label,
+.pc-comparison-controls output,
+.pc-comparison-status,
+.pc-comparison-provenance,
+.pc-baselines .bg-disclosure,
+.pc-baselines .bg-camera-labels,
+.pc-baselines figcaption,
+.pc-baselines details,
+.pc-execution-intro,
+.pc-execution-head,
+.pc-execution-row details,
+.pc-execution-unavailable,
+.pc-execution-note,
+.section .tag.is-light:not(.is-link),
+#pc-media-status:not([data-error='true']) {
+  color: var(--ft-text);
+}
+
+/* More-specific selected, hover, error and outcome rules remain in effect. */
+.pc-object-tabs button,
+.pc-actions button,
+.pc-touch-modes button,
+.pc-hotspot span,
+.pc-playback select,
+.pc-feature-modes button,
+.pc-comparison-tasks button,
+.pc-comparison-views button,
+.pc-comparison-global-controls select,
+.ft-toc-title,
+.ft-toc-link,
+.ft-nav-mobile a,
+.ft-navbar.is-scrolled .ft-nav-links a,
+.ft-navbar.is-scrolled .ft-btn-ghost,
+#top .button.is-light {
+  color: var(--ft-text);
+}
+
+/* Keep the brand intact with Noto Sans's wider letterforms on small screens. */
+@media (max-width: 480px) {
+  #top h1.publication-title { font-size: 3.125rem !important; }
+}
+@media (max-width: 360px) {
+  #top h1.publication-title { font-size: 2.625rem !important; }
+}

@@ -1,0 +1,55 @@
+#prediction-comparisons { --compare-accent:#436f62; scroll-margin-top:75px; background:#f8faf9; }
+.pc-comparison-container { max-width:1240px !important; width:100%; }
+.pc-comparison-heading p { color:#6f7a74; margin-top:14px; }
+.pc-comparison-tasks { display:flex; justify-content:center; gap:30px; border-bottom:1px solid #dfe7e2; margin:30px 0 20px; }
+.pc-comparison-tasks button { font:inherit; font-size:17px; border:0; border-bottom:2px solid transparent; padding:12px 16px; background:transparent; color:#718077; cursor:pointer; }
+.pc-comparison-tasks button[aria-pressed="true"] { color:#345e50; border-bottom-color:var(--compare-accent); }
+.pc-comparison-toolbar { display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+.pc-comparison-views { display:flex; align-items:center; flex-wrap:wrap; gap:5px; }
+.pc-comparison-views button { font:inherit; font-size:13px; padding:9px 12px; border:1px solid transparent; border-radius:4px; background:transparent; color:#6b7970; cursor:pointer; }
+.pc-comparison-views button[aria-pressed="true"] { background:#e8f0ec; border-color:#c6d8cb; color:#315d4d; }
+.pc-comparison-global-controls { display:flex; gap:8px; align-items:center; }
+.pc-comparison-global-controls button,.pc-comparison-global-controls select { height:36px; border:1px solid #d7e1da; border-radius:4px; background:white; color:#446553; }
+.pc-comparison-global-controls button { width:36px; cursor:pointer; }
+.pc-comparison-global-controls select { font:inherit; font-size:12px; padding:0 8px; }
+.pc-comparison-meta { color:#7c8680; font-size:12px; margin:14px 0 22px; }
+.pc-comparison-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px 24px; }
+.pc-comparison-example { min-width:0; }
+.pc-comparison-example-header { display:flex; gap:8px; justify-content:space-between; align-items:center; margin-bottom:9px; font-size:13px; color:#65766b; }
+.pc-comparison-example-header strong { color:#3e5044; font-weight:600; }
+.pc-comparison-surface { position:relative; width:100%; overflow:hidden; background:#e7ece8; border-radius:5px; touch-action:pan-y; cursor:ew-resize; isolation:isolate; user-select:none; -webkit-user-select:none; }
+.pc-comparison-surface canvas { display:block; position:absolute; inset:0; width:100%; height:100%; }
+.pc-comparison-gt { clip-path:inset(0 50% 0 0); }
+.pc-comparison-divider { pointer-events:none; position:absolute; top:0; bottom:0; left:50%; width:2px; background:white; transform:translateX(-50%); box-shadow:0 0 5px #32453a66; z-index:3; }
+.pc-comparison-divider i { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:30px; height:30px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#fffffff0; color:#566f61; font-size:12px; box-shadow:0 2px 8px #273b4b33; }
+.pc-comparison-side-label { position:absolute; top:8px; z-index:4; pointer-events:none; font-size:11px; background:#1c2f24b8; color:white; padding:3px 7px; border-radius:3px; }
+.pc-comparison-side-label.is-gt { left:8px; }
+.pc-comparison-side-label.is-pred { right:8px; }
+.pc-comparison-layer-label { position:absolute; left:8px; z-index:4; pointer-events:none; font-size:10px; padding:2px 5px; border-radius:2px; background:#ffffffcf; color:#41594a; }
+.pc-comparison-layer-label.diff { top:34px; }
+.pc-comparison-layer-label.flow { top:calc(50% + 5px); }
+.pc-comparison-controls { display:flex; align-items:center; gap:8px; padding-top:9px; }
+.pc-comparison-controls button { width:30px; height:30px; padding:0; flex:none; border:0; background:transparent; color:#426752; cursor:pointer; }
+.pc-comparison-controls input { min-width:0; flex:1; accent-color:var(--compare-accent); cursor:pointer; }
+.pc-comparison-controls output { font-variant-numeric:tabular-nums; font-size:11px; min-width:70px; color:#728174; }
+.pc-comparison-clip-status { min-height:17px; font-size:10px; color:#8c6858; }
+.pc-comparison-source { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
+.pc-comparison-status { font-size:12px; color:#57725f; min-height:20px; margin-top:14px; }
+.pc-comparison-provenance { color:#748076; font-size:12px; line-height:1.65; margin-top:16px; }
+.pc-comparison-provenance summary { cursor:pointer; }
+.pc-comparison-provenance p { margin:10px 0; max-width:950px; }
+.pc-comparison-provenance a { color:#45745b; }
+#prediction-comparisons button:focus-visible,#prediction-comparisons select:focus-visible,#prediction-comparisons input:focus-visible,.pc-comparison-surface:focus-visible { outline:3px solid #ba8453; outline-offset:3px; }
+@media(max-width:950px) { .pc-comparison-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+/* Reserve equal gutters so the rail stays clear without shifting the gallery. */
+@media(min-width:1408px) and (max-width:1879px) {
+  #prediction-comparisons { padding-inline:320px; }
+}
+@media(max-width:600px) {
+  #prediction-comparisons { padding:50px 20px; }
+  .pc-comparison-grid { grid-template-columns:minmax(0,1fr); gap:26px; }
+  .pc-comparison-tasks { gap:4px; justify-content:space-between; }
+  .pc-comparison-tasks button { padding:10px 7px; font-size:14px; }
+  .pc-comparison-views button { font-size:12px; padding:8px; }
+  .pc-comparison-meta { line-height:1.7; }
+}

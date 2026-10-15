@@ -1,0 +1,37 @@
+/* Apply the fixed-header offset once, including native anchor navigation. */
+html { scroll-padding-top: var(--pc-anchor-offset, 80px); }
+body section[id] { scroll-margin-top: 0 !important; }
+#ft-toc::before { pointer-events: none; }
+#ft-toc .ft-toc-link:focus-visible { outline: 2px solid #2f6fed; outline-offset: 2px; }
+/* Keep the template's original rail position, link sizing and 1408px breakpoint. */
+
+/* Compact primary navigation; full chapter links remain in the menu and rail. */
+.ft-navbar-left { flex: 1 1 auto; }
+.ft-brand, .ft-nav-links a, .ft-navbar-actions a { white-space: nowrap; }
+.ft-brand, .ft-navbar-actions, .ft-navbar-toggle { flex-shrink: 0; }
+.ft-navbar-actions { margin-left: auto; }
+.ft-navbar .ft-navbar-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.ft-navbar .ft-nav-mobile {
+  max-height: calc(100dvh - 4.5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+@media screen and (min-width: 1024px) {
+  .ft-navbar .ft-nav-links,
+  .ft-navbar .ft-navbar-actions { display: flex; }
+  .ft-navbar .ft-nav-mobile {
+    position: absolute;
+    right: max(24px, calc((100vw - 1280px) / 2 + 48px));
+    top: 4.5rem;
+    width: 280px;
+    padding: 12px;
+    border: 1px solid #e4e8ed;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(18, 32, 51, .1);
+  }
+}

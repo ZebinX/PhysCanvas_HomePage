@@ -1,0 +1,31 @@
+.pc-execution { scroll-margin-top:75px; background:white; }
+.pc-execution .container { max-width:1240px; }
+.pc-execution-intro { max-width:900px; margin:18px auto 36px; text-align:center; color:#68726e; line-height:1.7; }
+.pc-execution-policy { margin-top:48px; padding-bottom:16px; border-bottom:1px solid #dce5df; }
+.pc-execution-head,.pc-execution-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.pc-execution-head { color:#68726e; font-weight:600; padding:10px 0; }
+.pc-execution-head span:last-child { color:#38674e; }
+.pc-execution-task { font-weight:600; font-size:18px; margin:26px 0 12px; }
+.pc-execution-row figure { min-width:0; margin:0; }
+.pc-execution-row video,.pc-execution-unavailable { display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#f1f4f2; border-radius:4px; }
+.pc-execution-row figcaption { margin-top:10px; font-size:14px; line-height:1.5; }
+.pc-execution-row details { margin-top:8px; color:#6a7570; font-size:11px; overflow-wrap:anywhere; }
+.pc-execution-row summary { cursor:pointer; }
+.pc-outcome-success { color:#35714e; }
+.pc-outcome-failure { color:#995345; }
+.pc-execution-unavailable { display:flex; justify-content:center; align-items:center; color:#738077; font-size:14px; }
+.pc-execution-note { margin-top:32px; font-size:13px; color:#68726e; }
+.pc-execution-row[data-policy="act"] video { aspect-ratio:4/3; }
+.pc-execution .pc-execution-row[data-policy="act"] figure::before { display:none; content:none; }
+@media(max-width:1180px) {
+  .ft-nav-links,.ft-navbar-actions { display:none; }
+  .ft-navbar-toggle { display:inline-flex; align-items:center; justify-content:center; }
+}
+@media(max-width:700px) {
+  .pc-execution-head { display:none; }
+  .pc-execution-row { grid-template-columns:1fr; gap:24px; }
+  .pc-execution-row figure::before { display:block; font-weight:600; font-size:13px; margin-bottom:8px; }
+  .pc-execution-row figure:nth-child(1)::before { content:'Baseline failure 1'; }
+  .pc-execution-row figure:nth-child(2)::before { content:'Baseline failure 2'; }
+  .pc-execution-row figure:nth-child(3)::before { content:'After GRPO'; }
+}

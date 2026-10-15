@@ -1,0 +1,14 @@
+.pc-baselines .container{max-width:1240px!important;width:100%}
+.pc-baselines .bg-disclosure{max-width:920px;margin:0 auto 32px;text-align:center;color:#626b68;font-size:15px;line-height:1.65}
+.pc-baselines .bg-task{margin:52px 0 24px;padding-bottom:16px;border-bottom:1px solid #dbe3df}
+.pc-baselines .bg-example{margin:28px 0 16px}
+.pc-baselines .bg-comparison-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pc-baselines .bg-demo{margin:0;padding:12px;border:1px solid #dce3e0;border-radius:8px;min-width:0;background:#fff;box-shadow:0 3px 12px #132a2110}
+.pc-baselines .bg-demo h5{margin:0 0 14px}
+.pc-baselines .bg-camera-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));text-align:center;font-size:11px;color:#626b68;margin-bottom:6px}
+.pc-baselines video{display:block;width:100%;aspect-ratio:672/200;object-fit:contain;border-radius:6px;background:#eef1ef}
+.pc-baselines figcaption{font-size:14px;line-height:1.6;margin-top:12px;color:#48524e}
+.pc-baselines details{font-size:12px;margin-top:10px;color:#737b77;overflow-wrap:anywhere}
+.pc-baselines details p{margin:8px 0}
+@media(max-width:1380px){.ft-nav-links,.ft-navbar-actions{display:none}.ft-navbar-toggle{display:inline-flex;align-items:center;justify-content:center}}
+@media(max-width:560px){.pc-baselines .bg-comparison-row{grid-template-columns:1fr}.pc-baselines .bg-task{font-size:26px}}

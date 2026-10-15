@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+node_modules/
+.venv/
+qa/
+provenance/
+backups/
+*.tmp
+*-compressed.mp4
