@@ -41,7 +41,7 @@
       controls.append(this.play,this.replay,this.seek,this.time);this.node.append(controls);
       this.message=element('p','pc-comparison-clip-status');this.message.setAttribute('role','status');this.node.append(this.message);
       this.video=element('video','pc-comparison-source');this.video.muted=true;this.video.loop=true;this.video.playsInline=true;this.video.preload='none';this.video.setAttribute('aria-hidden','true');this.node.append(this.video);
-      this.poster=new Image();this.poster.onload=()=>{if(!this.dead&&!this.ready)this.paint(this.poster);};this.poster.src=this.media.poster;
+      this.poster=new Image();this.poster.onload=()=>{if(!this.dead&&!this.ready)this.paint(this.poster);};
       this.reveal(.5);this.events();
     }
     reveal(value){this.position=Math.max(0,Math.min(1,value));const pct=this.position*100;this.gt.style.clipPath=`inset(0 ${100-pct}% 0 0)`;this.divider.style.left=`${pct}%`;this.surface.setAttribute('aria-valuenow',String(Math.round(pct)));this.surface.setAttribute('aria-valuetext',`${Math.round(pct)} percent ground truth`);this.gtLabel.style.visibility=pct<12?'hidden':'visible';this.predLabel.style.visibility=pct>88?'hidden':'visible';}
@@ -64,7 +64,7 @@
     stop(){if(this.callback){if(this.video.cancelVideoFrameCallback)this.video.cancelVideoFrameCallback(this.callback);else cancelAnimationFrame(this.callback);}this.callback=0;}
     tick(){this.stop();this.draw();if(this.dead||this.video.paused||!this.visible||document.hidden)return;this.callback=this.video.requestVideoFrameCallback?this.video.requestVideoFrameCallback(()=>this.tick()):requestAnimationFrame(()=>this.tick());}
     button(){const playing=!this.video.paused;this.play.innerHTML=`<i class="fa-solid ${playing?'fa-pause':'fa-play'}" aria-hidden="true"></i>`;this.play.title=playing?'Pause example':'Play example';this.play.setAttribute('aria-label',this.play.title);}
-    load(){if(!this.video.getAttribute('src')){this.message.textContent='Loading…';this.video.src=this.media.video;this.video.load();}}
+    load(){if(!this.poster.getAttribute('src'))this.poster.src=this.media.poster;if(!this.video.getAttribute('src')){this.message.textContent='Loading…';this.video.src=this.media.video;this.video.load();}}
     resume(){if(this.dead||!this.visible||!this.ready||!this.wantsPlay||document.hidden)return;this.video.playbackRate=state.speed;this.video.play().catch(error=>{if(this.dead||error.name==='AbortError')return;this.wantsPlay=false;this.button();this.message.textContent='Paused. Press play to resume.';});}
     events(){
       this.surface.addEventListener('pointerdown',e=>{if(e.button!==undefined&&e.button!==0)return;this.surface.setPointerCapture(e.pointerId);if(e.pointerType==='mouse')e.preventDefault();const r=this.surface.getBoundingClientRect();this.reveal(revealAt(e.clientX,r.left,r.width));});

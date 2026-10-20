@@ -4,28 +4,28 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../webfonts/noto-sans/noto-sans-400.ttf') format('truetype');
+  src: url('../webfonts/noto-sans/noto-sans-400.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('../webfonts/noto-sans/noto-sans-500.ttf') format('truetype');
+  src: url('../webfonts/noto-sans/noto-sans-500.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('../webfonts/noto-sans/noto-sans-600.ttf') format('truetype');
+  src: url('../webfonts/noto-sans/noto-sans-600.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('../webfonts/noto-sans/noto-sans-700.ttf') format('truetype');
+  src: url('../webfonts/noto-sans/noto-sans-700.woff2') format('woff2');
 }
 
 :root { --pc-font-family: 'Noto Sans', sans-serif; }

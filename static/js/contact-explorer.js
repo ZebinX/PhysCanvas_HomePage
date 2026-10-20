@@ -37,7 +37,7 @@
   const trace=byId('response'), traceCtx=trace.getContext('2d');
   const play=byId('play'), timeline=byId('timeline'), image=byId('object-image'), arm=byId('ghost-arm');
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
-  const state={clip:data.clips.find(c=>c.id==='blocks-join-pull-right') || data.clips[0],mode:'overlay',loaded:false,wantsPlay:false,visible:false,raf:0,version:0,poster:null};
+  const state={clip:data.clips.find(c=>c.id==='blocks-join-pull-right') || data.clips[0],mode:'overlay',loaded:false,detailsLoaded:false,wantsPlay:false,visible:false,raf:0,version:0,poster:null};
   const maxResponse=Math.max(...data.clips.flatMap(c=>c.response).filter(Number.isFinite))*1.08;
 
   function setStatus(message,error=false) { status.textContent=message;status.dataset.error=String(error); }
@@ -89,7 +89,7 @@
         const ctx=contexts[s+1];ctx.clearRect(0,0,224,392);
         if(state.mode!=='flow')ctx.drawImage(source,432+s*232,4,224,392,0,0,224,392);
         else {ctx.fillStyle='#f1f5f2';ctx.fillRect(0,0,224,392);}
-        if(state.mode!=='diff'){
+        if(state.mode!=='diff' && state.detailsLoaded){
           clip.flow[frame][s].forEach((delta,i)=>{if(delta)drawArrow(ctx,arrowVector(clip.reference[s][i],delta,data.display_gain,224,392));});
         }
       });
@@ -127,17 +127,27 @@
     arm.style.left=clip.hand==='left'?'0':'32%';
     timeline.max=String(clip.frames-1);
   }
-  function ensureLoaded() {if(!video.getAttribute('src')){video.src=state.clip.video;video.load();}}
-  function select(clip,autoplay) {
+  function ensureLoaded() {if(state.detailsLoaded && !video.getAttribute('src')){video.src=state.clip.video;video.load();}}
+  async function select(clip,autoplay) {
     if(!clip)return;
-    stopFrames();video.pause();state.version++;state.clip=clip;state.loaded=false;state.poster=null;state.wantsPlay=autoplay;
+    stopFrames();video.pause();state.version++;state.clip=clip;state.loaded=false;state.detailsLoaded=false;state.poster=null;state.wantsPlay=autoplay;
     video.removeAttribute('src');video.load();renderSelection();setPlayButton();
     contexts.forEach((ctx,i)=>{ctx.fillStyle='#f1f4f2';ctx.fillRect(0,0,i?224:400,i?392:400);});
     const version=state.version,poster=new Image();
     poster.onload=()=>{if(version!==state.version)return;state.poster=poster;draw();};
     poster.onerror=()=>{if(version===state.version)setStatus('Preview unavailable. The recording may still play.',true);};
     poster.src=clip.poster;setStatus('Loading recording…');draw();
-    if(state.visible)ensureLoaded();
+    try {
+      await window.PhysCanvasAssets.loadScript(clip.dataScript);
+      if(version!==state.version)return;
+      const details=window.PHYS_CONTACT_CLIPS[clip.id];
+      if(!details)throw new Error('Contact details unavailable');
+      state.clip={...clip,...details};state.detailsLoaded=true;draw();
+      if(state.visible)ensureLoaded();
+    } catch(error) {
+      if(version===state.version)setStatus('Recording unavailable. Select another example to retry.',true);
+      console.error(error);
+    }
   }
   root.querySelectorAll('[data-object]').forEach(b=>b.addEventListener('click',()=>{
     const task=b.dataset.object;select(chooseClip(data.clips,task,objects[task].regions[0].id,'grasp','left'),true);

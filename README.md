@@ -1,41 +1,41 @@
 # PhysCanvas
 
-Project website for **PhysCanvas: A Vision-Tactile World Model for Robot Policy
-Evaluation and Learning**.
+Static project website for **PhysCanvas: A Vision-Tactile World Model for Robot
+Policy Evaluation and Learning**.
 
-Project URL: https://zebinx.github.io/PhysCanvas_HomePage/
+This is the clean, optimized project website. Visit
+[PhysCanvas](https://zebinx.github.io/PhysCanvas_HomePage/) or open `index.html`
+directly in a browser; no build, backend, API keys, or installation is required.
 
-## Contents
+## Included
 
-- Contact-rich robot recordings and the overview video
-- Interactive tactile examples and multimodal representations
-- Ground-truth and world-model prediction comparisons
-- Policy evaluation, learning, and real-world rollouts
-- Qualitative baseline comparisons and the paper
+- Homepage montage and overview video.
+- All 24 WM examples, with overhead, left/right wrist, and left/right tactile views.
+- All 24 tactile recordings, object images, and exact displacement data.
+- Baseline comparisons and real-world policy videos.
+- Four interactive feature spheres, paper, diagrams, fonts, and required libraries.
+
+Only referenced site resources and required license/deployment files are
+included. Original media, alternate versions, test outputs, encoding candidates,
+and audit scripts remain outside this project.
+
+The layout and selected episodes are unchanged. Media encoding keeps the source
+dimensions, frame rates, frame counts, durations, and existing audio/subtitle
+streams. Numeric feature and tactile data are not quantized. Compression is
+accepted only when it reduces size and passes full-video quality checks;
+otherwise the existing asset is kept.
 
 The demos are curated qualitative examples, not an unbiased estimate of model
 performance. Refer to the paper for evaluation protocols and aggregate results.
 
-## Local Preview
+## Publication
 
-This is a static website with no build step, backend, or API keys. Open
-`index.html` directly, or serve this directory with a local static HTTP server.
-All media, fonts, and runtime libraries required by the page are bundled.
-
-## GitHub Pages
-
-In this repository's **Settings > Pages**, select **Deploy from a branch**,
-then choose **main** and **/ (root)**. The `.nojekyll` file keeps the static
-assets intact. Relative resource URLs support the repository's project path.
-
-Only files used by the published page are included. Experiment artifacts,
-alternate candidate videos, backups, and machine-specific scripts are excluded.
-The published files are kept below 500 MB (decimal), excluding Git history.
-The overview video is compressed for delivery; tactile video dimensions and
-frame rates are preserved.
+GitHub Pages serves the repository root on the `main` branch. Relative URLs and
+`.nojekyll` keep the static site compatible with project hosting. The deployed
+site files total approximately 293.47 MB, excluding Git history.
 
 ## Attribution
 
-The layout is adapted from the [FlexiTac website](https://flexitac.github.io/).
-See [THIRD_PARTY.md](THIRD_PARTY.md) for template and dependency attribution.
+The layout is adapted from [FlexiTac](https://flexitac.github.io/).
+See `THIRD_PARTY.md` and the bundled font/library licenses.
 The template license does not grant rights to the research paper or media.

@@ -12,6 +12,22 @@ body * { letter-spacing: 0 !important; }
 #top .box { height: 100%; }
 .publication-video video { position: absolute; inset: 0; width: 100%; height: 100%; }
 #summary-video .pc-video-container { width: 100%; max-width: 1200px; }
+/* Match the 960x544 source without letterboxing or rounded-corner gaps. */
+#summary-video .publication-video {
+  height: auto;
+  padding: 0;
+  aspect-ratio: 960 / 544;
+  background: #000;
+  border-radius: 0 !important;
+}
+#summary-video .publication-video video {
+  display: block;
+  border: 0;
+  border-radius: 0;
+  object-fit: contain;
+  background: #000;
+}
+#summary-video video::backdrop { background: #000; }
 .pc-method { line-height: 1.8; margin: 2rem auto 0; text-align: left; max-width: 920px; }
 .pc-playback { position: absolute; bottom: 4.2rem; right: 1rem; z-index: 3; }
 .pc-playback button { width: 2.5rem; height: 2.5rem; padding: 0; }

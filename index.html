@@ -13,13 +13,13 @@
   <meta property="og:url" content="https://zebinx.github.io/PhysCanvas_HomePage/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://zebinx.github.io/PhysCanvas_HomePage/assets/hero-wall-poster.jpg">
-  <!-- Preload the hero poster so the first paint is instant while the video buffers -->
-  <link rel="preload" as="image" href="assets/hero-wall-poster.jpg">
+  <link rel="preload" as="image" href="assets/hero-wall-poster.webp" media="(min-width: 769px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-wall-mobile-poster.webp" media="(max-width: 768px)" fetchpriority="high">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/index.css?v=20260616j">
   <link rel="stylesheet" href="static/css/fontawesome.min.css">
-  <link rel="stylesheet" href="static/css/physcanvas.css?v=20261015-framework">
+  <link rel="stylesheet" href="static/css/physcanvas.css?v=20261020-overview-frame">
 <link rel="stylesheet" href="static/css/contact-explorer.css?v=20261012-v1">
 <link rel="stylesheet" href="static/css/real-execution.css">
 <link rel="stylesheet" href="static/css/prediction-comparisons.css?v=20261014-centered">
@@ -60,14 +60,14 @@
 
 <section id="top" class="hero is-link is-fullheight video" style="overflow:hidden; position:relative;">
   <div class="hero-video is-hidden-mobile">
-    <video playsinline muted loop preload="none" poster="assets/hero-wall-poster.jpg" aria-label="Real robot recordings: wrist RGB paired with Tactile Image and Marker Disp.">
-      <source src="assets/hero-wall-48.mp4" type="video/mp4">
+    <video playsinline muted loop preload="none" data-poster="assets/hero-wall-poster.webp" aria-label="Real robot recordings: wrist RGB paired with Tactile Image and Marker Disp.">
+      <source data-src="assets/hero-wall-48-preview.mp4" type="video/mp4">
     </source></video>
   </div>
 
   <div class="hero-video is-hidden-tablet is-inline-block-mobile">
-    <video playsinline muted loop preload="none" poster="assets/hero-wall-mobile-poster.jpg" aria-label="Real robot recordings: wrist RGB paired with Tactile Image and Marker Disp.">
-      <source src="assets/hero-wall-48-mobile.mp4" type="video/mp4">
+    <video playsinline muted loop preload="none" data-poster="assets/hero-wall-mobile-poster.webp" aria-label="Real robot recordings: wrist RGB paired with Tactile Image and Marker Disp.">
+      <source data-src="assets/hero-wall-48-mobile-preview.mp4" type="video/mp4">
     </source></video>
   </div>
 
@@ -94,7 +94,7 @@
           </span>
           <span>Video Overview</span>
         </a>
-        <a href="assets/hero-wall-48.mp4" class="external-link button is-normal is-rounded is-light">
+        <a href="assets/hero-wall-48-preview.mp4" class="external-link button is-normal is-rounded is-light">
           <span class="icon">
             <i class="fa-solid fa-play"></i>
           </span>
@@ -130,7 +130,7 @@
         <h2 class="title is-2 has-text-centered is-size-4-mobile">Video Overview</h2>
         <p class="has-text-centered" style="max-width:760px; margin:0 auto 1.5rem auto;">Joint vision-tactile prediction for robot policy evaluation and learning.</p>
         <div class="publication-video">
-<video controls="controls" playsinline="playsinline" preload="none" poster="assets/overview-poster.jpg?v=20261016-v2">Your browser does not support HTML video. <source src="assets/overview.mp4?v=20261016-v2" type="video/mp4"></source><a href="assets/overview.mp4?v=20261016-v2">Open the overview video.</a></video>
+<video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/overview-poster.jpg?v=20261016-v2">Your browser does not support HTML video. <source data-src="assets/overview.mp4?v=20261016-v2" type="video/mp4"></source><a href="assets/overview.mp4?v=20261016-v2">Open the overview video.</a></video>
 </div>
       </div>
     </div>
@@ -145,10 +145,10 @@
       <p>Distinct tactile patterns from grasping different objects.</p>
     </header>
     <div class="pc-object-tabs" role="group" aria-label="Object">
-      <button type="button" data-object="test_tube" aria-pressed="true"><img src="assets/contact/objects/test_tube.webp" alt="" width="42" height="48"><span>Test tube</span></button>
-      <button type="button" data-object="bottle" aria-pressed="false"><img src="assets/contact/objects/bottle.webp" alt="" width="42" height="48"><span>Bottle</span></button>
-      <button type="button" data-object="blocks" aria-pressed="false"><img src="assets/contact/objects/blocks.webp" alt="" width="42" height="48"><span>Blocks</span></button>
-      <button type="button" data-object="cube" aria-pressed="false"><img src="assets/contact/objects/cube.webp" alt="" width="42" height="48"><span>Rubik's Cube</span></button>
+      <button type="button" data-object="test_tube" aria-pressed="true"><img src="assets/contact/objects/test_tube-thumb.webp" alt="" width="42" height="48" loading="lazy" decoding="async"><span>Test tube</span></button>
+      <button type="button" data-object="bottle" aria-pressed="false"><img src="assets/contact/objects/bottle-thumb.webp" alt="" width="42" height="48" loading="lazy" decoding="async"><span>Bottle</span></button>
+      <button type="button" data-object="blocks" aria-pressed="false"><img src="assets/contact/objects/blocks-thumb.webp" alt="" width="42" height="48" loading="lazy" decoding="async"><span>Blocks</span></button>
+      <button type="button" data-object="cube" aria-pressed="false"><img src="assets/contact/objects/cube-thumb.webp" alt="" width="42" height="48" loading="lazy" decoding="async"><span>Rubik's Cube</span></button>
     </div>
     <div class="pc-explorer-body">
       <div class="pc-wrist-column">
@@ -172,9 +172,9 @@
 <span>Contact selection</span>
 </div>
         <div class="pc-object-stage" id="pc-object-stage">
-          <img id="pc-ghost-arm" src="assets/contact/objects/arm.webp" alt="" width="602" height="539">
+          <img id="pc-ghost-arm" src="assets/contact/objects/arm.webp" alt="" width="602" height="539" loading="lazy" decoding="async">
           <div id="pc-object-wrap" class="pc-object-wrap">
-            <img id="pc-object-image" src="assets/contact/objects/test_tube.webp" alt="Representative test tube, isolated from its background" width="544" height="2873">
+            <img id="pc-object-image" alt="Representative test tube, isolated from its background" width="544" height="2873" loading="lazy" decoding="async">
             <div id="pc-hotspots"></div>
           </div>
         </div>
@@ -216,7 +216,7 @@
   <div class="container is-max-desktop">
 <div class="columns is-centered"><div class="column is-11 has-text-centered">
 <span class="tag is-link is-light is-rounded">PhysCanvas</span><h2 class="title is-2 is-size-4-mobile" style="margin:1rem 0;">Overview</h2>
-<a href="assets/teaser-v3.pdf" aria-label="Open the PhysCanvas teaser PDF"><img src="assets/teaser-v3.webp" width="3154" height="1439" loading="lazy" alt="PhysCanvas: contact-rich tasks, a unified visual-tactile world model, joint generation, and policy evaluation and learning."></a><p class="subtitle pc-method">PhysCanvas maps multi-view RGB observations, tactile images, marker displacement, task state, and actions into a unified visual space. Conditioned on projected robot motion and reference observations, the model jointly predicts visual and tactile futures. Reward-based supervision supports consistent interactions, enabling robot policy evaluation and learning through imagined rollouts.</p>
+<a href="assets/teaser-v3.pdf" aria-label="Open the PhysCanvas teaser PDF"><img src="assets/teaser-v3.webp" width="3154" height="1439" loading="lazy" alt="PhysCanvas: contact-rich tasks, a unified visual-tactile world model, joint generation, and policy evaluation and learning." decoding="async"></a><p class="subtitle pc-method">PhysCanvas maps multi-view RGB observations, tactile images, marker displacement, task state, and actions into a unified visual space. Conditioned on projected robot motion and reference observations, the model jointly predicts visual and tactile futures. Reward-based supervision supports consistent interactions, enabling robot policy evaluation and learning through imagined rollouts.</p>
 </div></div>
 </div>
 </section>
@@ -323,19 +323,19 @@
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/shiguan-evac-2.jpg" data-src="assets/baseline-showcase/shiguan-evac-2.mp4" aria-label="Test tube, EVAC"></video><figcaption>Small rack details deform in wrist views.</figcaption></figure><figure class="box alt bg-demo" data-model="evac" data-task="bottle" data-example-id="bottle-evac-1"><h5 class="title is-6 has-text-centered">Bottle</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/shiguan-evac-2.jpg" data-src="assets/baseline-showcase/shiguan-evac-2.mp4" aria-label="Test tube, EVAC"></video><figcaption>Small rack details deform in wrist views.</figcaption></figure><figure class="box alt bg-demo" data-model="evac" data-task="bottle" data-example-id="bottle-evac-1"><h5 class="title is-6 has-text-centered">Bottle</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/bottle-evac-1.jpg" data-src="assets/baseline-showcase/bottle-evac-1.mp4" aria-label="Bottle, EVAC"></video><figcaption>Soft boundaries around the cap and gripper.</figcaption></figure><figure class="box alt bg-demo" data-model="evac" data-task="jimu" data-example-id="jimu-evac-2"><h5 class="title is-6 has-text-centered">Blocks</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/bottle-evac-1.jpg" data-src="assets/baseline-showcase/bottle-evac-1.mp4" aria-label="Bottle, EVAC"></video><figcaption>Soft boundaries around the cap and gripper.</figcaption></figure><figure class="box alt bg-demo" data-model="evac" data-task="jimu" data-example-id="jimu-evac-2"><h5 class="title is-6 has-text-centered">Blocks</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/jimu-evac-2.jpg" data-src="assets/baseline-showcase/jimu-evac-2.mp4" aria-label="Blocks, EVAC"></video><figcaption>Bag openings and folds change shape.</figcaption></figure><figure class="box alt bg-demo" data-model="evac" data-task="mofang" data-example-id="mofang-evac-1"><h5 class="title is-6 has-text-centered">Rubik's Cube</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/jimu-evac-2.jpg" data-src="assets/baseline-showcase/jimu-evac-2.mp4" aria-label="Blocks, EVAC"></video><figcaption>Bag openings and folds change shape.</figcaption></figure><figure class="box alt bg-demo" data-model="evac" data-task="mofang" data-example-id="mofang-evac-1"><h5 class="title is-6 has-text-centered">Rubik's Cube</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/mofang-evac-1.jpg" data-src="assets/baseline-showcase/mofang-evac-1.mp4" aria-label="Rubik's Cube, EVAC"></video><figcaption>Rubik's Cube sticker boundaries become soft during rotation.</figcaption></figure>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/mofang-evac-1.jpg" data-src="assets/baseline-showcase/mofang-evac-1.mp4" aria-label="Rubik's Cube, EVAC"></video><figcaption>Rubik's Cube sticker boundaries become soft during rotation.</figcaption></figure>
 </div>
 <h3 class="title is-3 bg-task">Open-Sora</h3>
 <div class="bg-comparison-row" data-model="opensora">
@@ -343,19 +343,19 @@
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/shiguan-opensora-1.jpg" data-src="assets/baseline-showcase/shiguan-opensora-1.mp4" aria-label="Test tube, Open-Sora"></video><figcaption>Fine rack and gripper boundaries become blurred.</figcaption></figure><figure class="box alt bg-demo" data-model="opensora" data-task="bottle" data-example-id="bottle-opensora-2"><h5 class="title is-6 has-text-centered">Bottle</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/shiguan-opensora-1.jpg" data-src="assets/baseline-showcase/shiguan-opensora-1.mp4" aria-label="Test tube, Open-Sora"></video><figcaption>Fine rack and gripper boundaries become blurred.</figcaption></figure><figure class="box alt bg-demo" data-model="opensora" data-task="bottle" data-example-id="bottle-opensora-2"><h5 class="title is-6 has-text-centered">Bottle</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/bottle-opensora-2.jpg" data-src="assets/baseline-showcase/bottle-opensora-2.mp4" aria-label="Bottle, Open-Sora"></video><figcaption>Fine bottle and gripper details become smooth.</figcaption></figure><figure class="box alt bg-demo" data-model="opensora" data-task="jimu" data-example-id="jimu-opensora-1"><h5 class="title is-6 has-text-centered">Blocks</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/bottle-opensora-2.jpg" data-src="assets/baseline-showcase/bottle-opensora-2.mp4" aria-label="Bottle, Open-Sora"></video><figcaption>Fine bottle and gripper details become smooth.</figcaption></figure><figure class="box alt bg-demo" data-model="opensora" data-task="jimu" data-example-id="jimu-opensora-1"><h5 class="title is-6 has-text-centered">Blocks</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/jimu-opensora-1.jpg" data-src="assets/baseline-showcase/jimu-opensora-1.mp4" aria-label="Blocks, Open-Sora"></video><figcaption>Bag and block surface details become smooth.</figcaption></figure><figure class="box alt bg-demo" data-model="opensora" data-task="mofang" data-example-id="mofang-opensora-1"><h5 class="title is-6 has-text-centered">Rubik's Cube</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/jimu-opensora-1.jpg" data-src="assets/baseline-showcase/jimu-opensora-1.mp4" aria-label="Blocks, Open-Sora"></video><figcaption>Bag and block surface details become smooth.</figcaption></figure><figure class="box alt bg-demo" data-model="opensora" data-task="mofang" data-example-id="mofang-opensora-1"><h5 class="title is-6 has-text-centered">Rubik's Cube</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/mofang-opensora-1.jpg" data-src="assets/baseline-showcase/mofang-opensora-1.mp4" aria-label="Rubik's Cube, Open-Sora"></video><figcaption>Rubik's Cube face geometry and fine detail deform.</figcaption></figure>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/mofang-opensora-1.jpg" data-src="assets/baseline-showcase/mofang-opensora-1.mp4" aria-label="Rubik's Cube, Open-Sora"></video><figcaption>Rubik's Cube face geometry and fine detail deform.</figcaption></figure>
 </div>
 <h3 class="title is-3 bg-task">WoVR</h3>
 <div class="bg-comparison-row" data-model="wovr">
@@ -363,19 +363,19 @@
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/shiguan-wovr-2.jpg" data-src="assets/baseline-showcase/shiguan-wovr-2.mp4" aria-label="Test tube, WoVR"></video><figcaption>Rack appearance and brightness change over time.</figcaption></figure><figure class="box alt bg-demo" data-model="wovr" data-task="bottle" data-example-id="bottle-wovr-1"><h5 class="title is-6 has-text-centered">Bottle</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/shiguan-wovr-2.jpg" data-src="assets/baseline-showcase/shiguan-wovr-2.mp4" aria-label="Test tube, WoVR"></video><figcaption>Rack appearance and brightness change over time.</figcaption></figure><figure class="box alt bg-demo" data-model="wovr" data-task="bottle" data-example-id="bottle-wovr-1"><h5 class="title is-6 has-text-centered">Bottle</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/bottle-wovr-1.jpg" data-src="assets/baseline-showcase/bottle-wovr-1.mp4" aria-label="Bottle, WoVR"></video><figcaption>Noticeable appearance and illumination drift.</figcaption></figure><figure class="box alt bg-demo" data-model="wovr" data-task="jimu" data-example-id="jimu-wovr-2"><h5 class="title is-6 has-text-centered">Blocks</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/bottle-wovr-1.jpg" data-src="assets/baseline-showcase/bottle-wovr-1.mp4" aria-label="Bottle, WoVR"></video><figcaption>Noticeable appearance and illumination drift.</figcaption></figure><figure class="box alt bg-demo" data-model="wovr" data-task="jimu" data-example-id="jimu-wovr-2"><h5 class="title is-6 has-text-centered">Blocks</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/jimu-wovr-2.jpg" data-src="assets/baseline-showcase/jimu-wovr-2.mp4" aria-label="Blocks, WoVR"></video><figcaption>Bag edges and background appearance drift.</figcaption></figure><figure class="box alt bg-demo" data-model="wovr" data-task="mofang" data-example-id="mofang-wovr-1"><h5 class="title is-6 has-text-centered">Rubik's Cube</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/jimu-wovr-2.jpg" data-src="assets/baseline-showcase/jimu-wovr-2.mp4" aria-label="Blocks, WoVR"></video><figcaption>Bag edges and background appearance drift.</figcaption></figure><figure class="box alt bg-demo" data-model="wovr" data-task="mofang" data-example-id="mofang-wovr-1"><h5 class="title is-6 has-text-centered">Rubik's Cube</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/mofang-wovr-1.jpg" data-src="assets/baseline-showcase/mofang-wovr-1.mp4" aria-label="Rubik's Cube, WoVR"></video><figcaption>Strong appearance changes in Rubik's Cube and wrist views.</figcaption></figure>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/mofang-wovr-1.jpg" data-src="assets/baseline-showcase/mofang-wovr-1.mp4" aria-label="Rubik's Cube, WoVR"></video><figcaption>Strong appearance changes in Rubik's Cube and wrist views.</figcaption></figure>
 </div>
 <h3 class="title is-3 bg-task">PhysCanvas</h3>
 <div class="bg-comparison-row" data-model="stat">
@@ -383,25 +383,25 @@
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/shiguan-stat-2.jpg" data-src="assets/baseline-showcase/shiguan-stat-2.mp4" aria-label="Test tube, PhysCanvas"></video><figcaption>Retained rack structure and scene appearance.</figcaption></figure><figure class="box alt bg-demo" data-model="stat" data-task="bottle" data-example-id="bottle-stat-2"><h5 class="title is-6 has-text-centered">Bottle</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/shiguan-stat-2.jpg" data-src="assets/baseline-showcase/shiguan-stat-2.mp4" aria-label="Test tube, PhysCanvas"></video><figcaption>Retained rack structure and scene appearance.</figcaption></figure><figure class="box alt bg-demo" data-model="stat" data-task="bottle" data-example-id="bottle-stat-2"><h5 class="title is-6 has-text-centered">Bottle</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/bottle-stat-2.jpg" data-src="assets/baseline-showcase/bottle-stat-2.mp4" aria-label="Bottle, PhysCanvas"></video><figcaption>Stable tabletop appearance and visible cap detail.</figcaption></figure><figure class="box alt bg-demo" data-model="stat" data-task="jimu" data-example-id="jimu-stat-1"><h5 class="title is-6 has-text-centered">Blocks</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/bottle-stat-2.jpg" data-src="assets/baseline-showcase/bottle-stat-2.mp4" aria-label="Bottle, PhysCanvas"></video><figcaption>Stable tabletop appearance and visible cap detail.</figcaption></figure><figure class="box alt bg-demo" data-model="stat" data-task="jimu" data-example-id="jimu-stat-1"><h5 class="title is-6 has-text-centered">Blocks</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/jimu-stat-1.jpg" data-src="assets/baseline-showcase/jimu-stat-1.mp4" aria-label="Blocks, PhysCanvas"></video><figcaption>Visible block colors and bag boundaries.</figcaption></figure><figure class="box alt bg-demo" data-model="stat" data-task="mofang" data-example-id="mofang-stat-2"><h5 class="title is-6 has-text-centered">Rubik's Cube</h5>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/jimu-stat-1.jpg" data-src="assets/baseline-showcase/jimu-stat-1.mp4" aria-label="Blocks, PhysCanvas"></video><figcaption>Visible block colors and bag boundaries.</figcaption></figure><figure class="box alt bg-demo" data-model="stat" data-task="mofang" data-example-id="mofang-stat-2"><h5 class="title is-6 has-text-centered">Rubik's Cube</h5>
 <div class="bg-camera-labels">
 <span>Overhead</span><span>Left wrist</span><span>Right wrist</span>
 </div>
-<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" poster="assets/baseline-showcase/mofang-stat-2.jpg" data-src="assets/baseline-showcase/mofang-stat-2.mp4" aria-label="Rubik's Cube, PhysCanvas"></video><figcaption>Visible face colors and coherent rubik's cube geometry.</figcaption></figure>
+<video autoplay="autoplay" muted="muted" loop="loop" controls="controls" playsinline="playsinline" preload="none" data-poster="assets/baseline-showcase/mofang-stat-2.jpg" data-src="assets/baseline-showcase/mofang-stat-2.mp4" aria-label="Rubik's Cube, PhysCanvas"></video><figcaption>Visible face colors and coherent rubik's cube geometry.</figcaption></figure>
 </div>
 </div></section><section class="section is-medium pc-policy-results" id="policy-evaluation" aria-labelledby="policy-evaluation-title">
   <div class="container">
     <h2 class="title is-2 has-text-centered" id="policy-evaluation-title">Policy Evaluation</h2>
     <figure>
-      <a href="assets/policy-evaluation.pdf"><img src="assets/policy-evaluation.webp" loading="lazy" alt="World-model versus real-world success rates on Test tube, Bottle, Blocks and Rubik's Cube, comparing WM and WM with state supervision."></a>
+      <a href="assets/policy-evaluation.pdf"><img src="assets/policy-evaluation.webp" loading="lazy" alt="World-model versus real-world success rates on Test tube, Bottle, Blocks and Rubik's Cube, comparing WM and WM with state supervision." decoding="async"></a>
       <figcaption>Each point compares world-model and real-world success rates for one evaluation batch. State supervision improves agreement across four tasks, increasing mean task-wise Pearson correlation from 0.602 to 0.885. The dotted diagonal indicates ideal agreement.</figcaption>
     </figure>
   </div>
@@ -410,7 +410,7 @@
   <div class="container">
     <h2 class="title is-2 has-text-centered" id="policy-learning-title">Policy Learning</h2>
     <figure>
-      <a href="assets/policy-results-paper-page10.pdf"><img src="assets/policy-learning.webp" loading="lazy" alt="Table 4: Real-world success rates for FM and pi 0.5 with SFT, RL in WM, and RL in WM plus reward models, across four tasks."></a>
+      <a href="assets/policy-results-paper-page10.pdf"><img src="assets/policy-learning.webp" loading="lazy" alt="Table 4: Real-world success rates for FM and pi 0.5 with SFT, RL in WM, and RL in WM plus reward models, across four tasks." decoding="async"></a>
       <figcaption>Real-world policy success rates (%) after supervised fine-tuning or reinforcement learning in the world model. Values are mean ± population standard deviation over three runs. Learning in the consistency-post-trained simulator improves average real-world performance, with gains varying by task.</figcaption>
     </figure>
   </div>
@@ -424,20 +424,20 @@
 </div>
 <h4 class="pc-execution-task">Test tube</h4>
 <div class="pc-execution-row">
-<figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/fm_tube_base_01.jpg" aria-label="Flow Matching (FM), Test-tube placement, Failure"><source src="assets/real-execution/fm_tube_base_01.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The tube drops beside the tray before rack placement.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/fm_tube_base_03.jpg" aria-label="Flow Matching (FM), Test-tube placement, Failure"><source src="assets/real-execution/fm_tube_base_03.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The tube is not successfully lifted and placed in the rack.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/fm_tube_grpo_04.jpg" aria-label="Flow Matching (FM), Test-tube placement, Failure"><source src="assets/real-execution/fm_tube_grpo_04.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Reaches the rack, but the tube is not seated and the rack is displaced.</span></figcaption></figure>
+<figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/fm_tube_base_01.jpg" aria-label="Flow Matching (FM), Test-tube placement, Failure"><source data-src="assets/real-execution/fm_tube_base_01.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The tube drops beside the tray before rack placement.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/fm_tube_base_03.jpg" aria-label="Flow Matching (FM), Test-tube placement, Failure"><source data-src="assets/real-execution/fm_tube_base_03.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The tube is not successfully lifted and placed in the rack.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/fm_tube_grpo_04.jpg" aria-label="Flow Matching (FM), Test-tube placement, Failure"><source data-src="assets/real-execution/fm_tube_grpo_04.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Reaches the rack, but the tube is not seated and the rack is displaced.</span></figcaption></figure>
 </div>
 <h4 class="pc-execution-task">Bottle</h4>
 <div class="pc-execution-row">
-<figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/fm_bottle_base_01.jpg" aria-label="Flow Matching (FM), Bottle, Failure"><source src="assets/real-execution/fm_bottle_base_01.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The bottle is released with the cap still attached.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/fm_bottle_base_02.jpg" aria-label="Flow Matching (FM), Bottle, Failure"><source src="assets/real-execution/fm_bottle_base_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Repeated grasp-and-turn attempts do not separate the cap.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/fm_bottle_grpo_06.jpg" aria-label="Flow Matching (FM), Bottle, Success"><source src="assets/real-execution/fm_bottle_grpo_06.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Unscrews the cap and leaves the bottle and cap separated.</span></figcaption></figure>
+<figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/fm_bottle_base_01.jpg" aria-label="Flow Matching (FM), Bottle, Failure"><source data-src="assets/real-execution/fm_bottle_base_01.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The bottle is released with the cap still attached.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/fm_bottle_base_02.jpg" aria-label="Flow Matching (FM), Bottle, Failure"><source data-src="assets/real-execution/fm_bottle_base_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Repeated grasp-and-turn attempts do not separate the cap.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/fm_bottle_grpo_06.jpg" aria-label="Flow Matching (FM), Bottle, Success"><source data-src="assets/real-execution/fm_bottle_grpo_06.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Unscrews the cap and leaves the bottle and cap separated.</span></figcaption></figure>
 </div>
 <h4 class="pc-execution-task">Blocks</h4>
 <div class="pc-execution-row">
-<figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/fm_blocks_base_04.jpg" aria-label="Flow Matching (FM), Block relocation, Failure"><source src="assets/real-execution/fm_blocks_base_04.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The green bag is knocked over during placement.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/fm_blocks_base_06.jpg" aria-label="Flow Matching (FM), Block relocation, Failure"><source src="assets/real-execution/fm_blocks_base_06.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The blocks are left on the table rather than inside their bags.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/fm_blocks_grpo_02.jpg" aria-label="Flow Matching (FM), Block relocation, Success"><source src="assets/real-execution/fm_blocks_grpo_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Separates the blocks and places both into the matching bags.</span></figcaption></figure>
+<figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/fm_blocks_base_04.jpg" aria-label="Flow Matching (FM), Block relocation, Failure"><source data-src="assets/real-execution/fm_blocks_base_04.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The green bag is knocked over during placement.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/fm_blocks_base_06.jpg" aria-label="Flow Matching (FM), Block relocation, Failure"><source data-src="assets/real-execution/fm_blocks_base_06.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The blocks are left on the table rather than inside their bags.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/fm_blocks_grpo_02.jpg" aria-label="Flow Matching (FM), Block relocation, Success"><source data-src="assets/real-execution/fm_blocks_grpo_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Separates the blocks and places both into the matching bags.</span></figcaption></figure>
 </div>
 <h3 class="title is-4 pc-execution-policy" data-policy="act">ACT</h3>
 <h4 class="pc-execution-task" data-policy="act">Rubik's Cube</h4>
 <div class="pc-execution-row" data-policy="act" data-task="cube">
-<figure data-policy="act"><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/act_cube_b4_ep16.jpg" aria-label="ACT, Rubik's Cube, Missed grasp."><source src="assets/real-execution/act_cube_b4_ep16.mp4" type="video/mp4"></source></video><figcaption class="pc-outcome-failure">Missed grasp.</figcaption></figure><figure data-policy="act"><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/act_cube_b4_ep11.jpg" aria-label="ACT, Rubik's Cube, Face remains uncorrected."><source src="assets/real-execution/act_cube_b4_ep11.mp4" type="video/mp4"></source></video><figcaption class="pc-outcome-failure">Face remains uncorrected.</figcaption></figure><figure data-policy="act"><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/act_cube_b4_ep06.jpg" aria-label="ACT, Rubik's Cube, Dropped before placement."><source src="assets/real-execution/act_cube_b4_ep06.mp4" type="video/mp4"></source></video><figcaption class="pc-outcome-failure">Dropped before placement.</figcaption></figure>
+<figure data-policy="act"><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/act_cube_b4_ep16.jpg" aria-label="ACT, Rubik's Cube, Missed grasp."><source data-src="assets/real-execution/act_cube_b4_ep16.mp4" type="video/mp4"></source></video><figcaption class="pc-outcome-failure">Missed grasp.</figcaption></figure><figure data-policy="act"><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/act_cube_b4_ep11.jpg" aria-label="ACT, Rubik's Cube, Face remains uncorrected."><source data-src="assets/real-execution/act_cube_b4_ep11.mp4" type="video/mp4"></source></video><figcaption class="pc-outcome-failure">Face remains uncorrected.</figcaption></figure><figure data-policy="act"><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/act_cube_b4_ep06.jpg" aria-label="ACT, Rubik's Cube, Dropped before placement."><source data-src="assets/real-execution/act_cube_b4_ep06.mp4" type="video/mp4"></source></video><figcaption class="pc-outcome-failure">Dropped before placement.</figcaption></figure>
 </div>
 <h3 class="title is-4 pc-execution-policy">π₀.₅</h3>
 <div class="pc-execution-head" aria-hidden="true">
@@ -445,19 +445,19 @@
 </div>
 <h4 class="pc-execution-task">Test tube</h4>
 <div class="pc-execution-row">
-<figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_tube_base_03.jpg" aria-label="π₀.₅, Test-tube placement, Failure"><source src="assets/real-execution/pi05_tube_base_03.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The tube is not retained upright in the rack after release.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_tube_base_06.jpg" aria-label="π₀.₅, Test-tube placement, Failure"><source src="assets/real-execution/pi05_tube_base_06.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The tube is left lying on the tabletop beside the rack.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_tube_grpo_03.jpg" aria-label="π₀.₅, Test-tube placement, Success"><source src="assets/real-execution/pi05_tube_grpo_03.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Completes the handover and leaves the tube standing in the rack.</span></figcaption></figure>
+<figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_tube_base_03.jpg" aria-label="π₀.₅, Test-tube placement, Failure"><source data-src="assets/real-execution/pi05_tube_base_03.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The tube is not retained upright in the rack after release.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_tube_base_06.jpg" aria-label="π₀.₅, Test-tube placement, Failure"><source data-src="assets/real-execution/pi05_tube_base_06.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The tube is left lying on the tabletop beside the rack.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_tube_grpo_03.jpg" aria-label="π₀.₅, Test-tube placement, Success"><source data-src="assets/real-execution/pi05_tube_grpo_03.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Completes the handover and leaves the tube standing in the rack.</span></figcaption></figure>
 </div>
 <h4 class="pc-execution-task">Bottle</h4>
 <div class="pc-execution-row">
-<figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_bottle_base_02.jpg" aria-label="π₀.₅, Bottle, Failure"><source src="assets/real-execution/pi05_bottle_base_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Turning ends without separating the cap from the bottle.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_bottle_base_05.jpg" aria-label="π₀.₅, Bottle, Failure"><source src="assets/real-execution/pi05_bottle_base_05.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Releases the bottle before the cap has been removed.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_bottle_grpo_02.jpg" aria-label="π₀.₅, Bottle, Success"><source src="assets/real-execution/pi05_bottle_grpo_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Removes the cap and places it separately from the bottle.</span></figcaption></figure>
+<figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_bottle_base_02.jpg" aria-label="π₀.₅, Bottle, Failure"><source data-src="assets/real-execution/pi05_bottle_base_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Turning ends without separating the cap from the bottle.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_bottle_base_05.jpg" aria-label="π₀.₅, Bottle, Failure"><source data-src="assets/real-execution/pi05_bottle_base_05.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Releases the bottle before the cap has been removed.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_bottle_grpo_02.jpg" aria-label="π₀.₅, Bottle, Success"><source data-src="assets/real-execution/pi05_bottle_grpo_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Removes the cap and places it separately from the bottle.</span></figcaption></figure>
 </div>
 <h4 class="pc-execution-task">Blocks</h4>
 <div class="pc-execution-row">
-<figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_blocks_base_01.jpg" aria-label="π₀.₅, Block relocation, Failure"><source src="assets/real-execution/pi05_blocks_base_01.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The green block misses its bag and remains on the table.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_blocks_base_04.jpg" aria-label="π₀.₅, Block relocation, Failure"><source src="assets/real-execution/pi05_blocks_base_04.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Neither block reaches its bag after the separation attempt.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_blocks_grpo_01.jpg" aria-label="π₀.₅, Block relocation, Success"><source src="assets/real-execution/pi05_blocks_grpo_01.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Separates and deposits both blocks into their matching bags.</span></figcaption></figure>
+<figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_blocks_base_01.jpg" aria-label="π₀.₅, Block relocation, Failure"><source data-src="assets/real-execution/pi05_blocks_base_01.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The green block misses its bag and remains on the table.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_blocks_base_04.jpg" aria-label="π₀.₅, Block relocation, Failure"><source data-src="assets/real-execution/pi05_blocks_base_04.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Neither block reaches its bag after the separation attempt.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_blocks_grpo_01.jpg" aria-label="π₀.₅, Block relocation, Success"><source data-src="assets/real-execution/pi05_blocks_grpo_01.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Separates and deposits both blocks into their matching bags.</span></figcaption></figure>
 </div>
 <h4 class="pc-execution-task">Rubik's Cube</h4>
 <div class="pc-execution-row">
-<figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_cube_base_02.jpg" aria-label="π₀.₅, Rubik's Cube, Failure"><source src="assets/real-execution/pi05_cube_base_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The face turn remains incomplete when the Rubik's Cube is set down.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_cube_base_03.jpg" aria-label="π₀.₅, Rubik's Cube, Failure"><source src="assets/real-execution/pi05_cube_base_03.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Releases the Rubik's Cube with a visibly offset layer.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" poster="assets/real-execution/pi05_cube_grpo_02.jpg" aria-label="π₀.₅, Rubik's Cube, Success"><source src="assets/real-execution/pi05_cube_grpo_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Completes the corrective face turn and sets down the aligned Rubik's Cube.</span></figcaption></figure>
+<figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_cube_base_02.jpg" aria-label="π₀.₅, Rubik's Cube, Failure"><source data-src="assets/real-execution/pi05_cube_base_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>The face turn remains incomplete when the Rubik's Cube is set down.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_cube_base_03.jpg" aria-label="π₀.₅, Rubik's Cube, Failure"><source data-src="assets/real-execution/pi05_cube_base_03.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-failure">Failure · </strong><span>Releases the Rubik's Cube with a visibly offset layer.</span></figcaption></figure><figure><video controls="controls" playsinline="playsinline" preload="none" data-poster="assets/real-execution/pi05_cube_grpo_02.jpg" aria-label="π₀.₅, Rubik's Cube, Success"><source data-src="assets/real-execution/pi05_cube_grpo_02.mp4" type="video/mp4"></source></video><figcaption><strong class="pc-outcome-success">Success · </strong><span>Completes the corrective face turn and sets down the aligned Rubik's Cube.</span></figcaption></figure>
 </div>
 <p class="pc-execution-note">Outcomes are visually assessed; failure descriptions refer to observed behavior.</p>
 </div></section><footer class="ft-footer">
@@ -473,7 +473,7 @@
 </div>
     <div class="ft-footer-col">
 <h4>Materials</h4>
-<a href="assets/hero-wall-48.mp4">Data Video</a><a href="https://github.com/FlexiTac/FlexiTac.github.io">Website Template</a>
+<a href="assets/hero-wall-48-preview.mp4">Data Video</a><a href="https://github.com/FlexiTac/FlexiTac.github.io">Website Template</a>
 </div>
   </div>
   <div class="ft-footer-legal">
@@ -481,11 +481,11 @@
   </div>
 </footer>
 
-<script src="static/js/physcanvas-media.js"></script>
-<script src="static/js/contact-data.js" defer></script><script src="static/js/contact-explorer.js?v=20261015-labels" defer></script>
-<script src="static/js/comparison-data.js?v=20261016-bottle-example04" defer></script><script src="static/js/prediction-comparisons.js?v=20261016-no-tactile-badge" defer></script>
-<script src="static/js/physcanvas-navigation.js"></script>
-<script src="static/js/baseline-gallery.js"></script>
-<script src="static/vendor/three-r160/three.min.js" defer></script><script src="assets/feature-spheres/data.js?v=20261015-labels" defer></script><script src="static/js/feature-spheres.js" defer></script>
+<script src="static/js/physcanvas-media.js" defer></script>
+<script src="static/js/physcanvas-navigation.js" defer></script>
+<script src="static/js/physcanvas-loader.js" defer></script>
+<script src="static/js/comparison-data.js?v=20261016-bottle-example04" defer></script>
+<script src="static/js/prediction-comparisons.js?v=20261020-lazy" defer></script>
+<script src="static/js/baseline-gallery.js" defer></script>
 </body>
 </html>
