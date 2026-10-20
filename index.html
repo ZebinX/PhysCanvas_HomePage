@@ -216,7 +216,7 @@
   <div class="container is-max-desktop">
 <div class="columns is-centered"><div class="column is-11 has-text-centered">
 <span class="tag is-link is-light is-rounded">PhysCanvas</span><h2 class="title is-2 is-size-4-mobile" style="margin:1rem 0;">Overview</h2>
-<a href="assets/teaser-v3.pdf" aria-label="Open the PhysCanvas teaser PDF"><img src="assets/teaser-v3.webp" width="3154" height="1439" loading="lazy" alt="PhysCanvas: contact-rich tasks, a unified visual-tactile world model, joint generation, and policy evaluation and learning." decoding="async"></a><p class="subtitle pc-method">PhysCanvas maps multi-view RGB observations, tactile images, marker displacement, task state, and actions into a unified visual space. Conditioned on projected robot motion and reference observations, the model jointly predicts visual and tactile futures. Reward-based supervision supports consistent interactions, enabling robot policy evaluation and learning through imagined rollouts.</p>
+<img src="assets/teaser-v3.webp" width="3154" height="1439" loading="lazy" alt="PhysCanvas: contact-rich tasks, a unified visual-tactile world model, joint generation, and policy evaluation and learning." decoding="async"><p class="subtitle pc-method">PhysCanvas maps multi-view RGB observations, tactile images, marker displacement, task state, and actions into a unified visual space. Conditioned on projected robot motion and reference observations, the model jointly predicts visual and tactile futures. Reward-based supervision supports consistent interactions, enabling robot policy evaluation and learning through imagined rollouts.</p>
 </div></div>
 </div>
 </section>
@@ -225,9 +225,7 @@
   <div class="container is-max-desktop">
     <h2 class="title is-2 is-size-4-mobile has-text-centered" id="framework-title">Framework</h2>
     <figure>
-      <a href="assets/main-fig.pdf" target="_blank" rel="noopener" aria-label="Open the PhysCanvas framework as a high-resolution PDF">
-        <img src="assets/main-fig.webp" width="3600" height="1980" loading="lazy" decoding="async" alt="PhysCanvas framework: a unified multimodal world model conditioned on projected robot motion, reward model training, and consistency-aware world model post-training.">
-      </a>
+      <img src="assets/main-fig.webp" width="3600" height="1980" loading="lazy" decoding="async" alt="PhysCanvas framework: a unified multimodal world model conditioned on projected robot motion, reward model training, and consistency-aware world model post-training.">
       <figcaption>
         <p><strong>Unified multimodal generation.</strong> PhysCanvas combines multi-view RGB, tactile images, marker displacement, and task state in a unified canvas. A shared video VAE and Wan 2.2 predict future observations, conditioned on projected robot motion, an initial RGB anchor, and updated reference observations.</p>
         <p><strong>Consistency-aware post-training.</strong> Scene, Modality, and State Reward Models are trained using expert data and world-model rollouts. These reward models are then frozen to guide post-training toward scene consistency, visual-tactile compatibility, and agreement between predicted task state and task outcomes.</p>
